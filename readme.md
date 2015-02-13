@@ -18,17 +18,14 @@ Tomcat 6 with SSL and Admin user configuration
 
 # Usage
 
-### Run an app in /c/Users/myapp
-    docker run -it --rm -p 8080 -p 8443 -v /c/Users/myapp:/webapp jaschen/tomcat6-jre7-ssl-admin
+### Run an app in /Users/jas/myapp
+    docker run -it --rm -p 8080 -p 8443 -v /Users/jas/myapp:/webapp jaschen/tomcat6-jre7-ssl-admin
 
 ### With logs
-    docker run -it --rm -p 8080 -p 8443 -v /c/Users/myapp:/webapp -v /c/Users/logs:/logs jaschen/tomcat6-jre7-ssl-admin
-
-### Publish ports
-    docker run -it --rm -p 80:8080 -p 443:8443 -v /c/Users/myapp:/webapp jaschen/tomcat6-jre7-ssl-admin
+    docker run -it --rm -p 8080 -p 8443 -v /Users/jas/myapp:/webapp -v /Users/jas/logs:/logs jaschen/tomcat6-jre7-ssl-admin
 
 ### Add JAVA_OPTS (eg. remote debug)
-    docker run -it --rm -e JAVA_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n' -p 80:8080 -p 443:8443 -p 8000:8000 -v /c/Users/myapp:/webapp jaschen/tomcat6-jre7-ssl-admin
+    docker run -it --rm -e JAVA_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n' -p 80:8080 -p 443:8443 -p 8000:8000 -v /Users/jas/myapp:/webapp jaschen/tomcat6-jre7-ssl-admin
 
 
 # Based on Dockerfiles
