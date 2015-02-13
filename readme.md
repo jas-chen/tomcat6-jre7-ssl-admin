@@ -1,5 +1,4 @@
-### Tomcat 6 with SSL and Admin user configuration
-maintain by Jas Chen
+# Tomcat 6 with SSL and Admin user configuration
 
 # ports
 - 8080 for http
@@ -14,13 +13,13 @@ maintain by Jas Chen
 - admin:b1uKcRK3r6SZ
 
 # run an app in /c/Users/myapp
-docker run -it --rm -p -v /c/Users/myapp:/webapp jas_chen/tomcat
+    docker run -it --rm -p -v /c/Users/myapp:/webapp jaschen/tomcat6-jre7-ssl-admin
 
 # with logs
-docker run -it --rm -p -v /c/Users/myapp:/webapp -v /c/Users/logs:/logs jas_chen/tomcat
+    docker run -it --rm -p -v /c/Users/myapp:/webapp -v /c/Users/logs:/logs jaschen/tomcat6-jre7-ssl-admin
 
 # change port
-docker run -it --rm -p -v /c/Users/myapp:/webapp jas_chen/tomcat -p 80:8080 -p 443:8443
+    docker run -it --rm -p -v /c/Users/myapp:/webapp jaschen/tomcat6-jre7-ssl-admin -p 80:8080 -p 443:8443
 
 # add JAVA_OPTS (eg. remote debug)
-docker run -it --rm -e JAVA_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n' -p 80:8080 -p 443:8443 -p 8000:8000 -v /c/Users/myapp:/webapp jas_chen/tomcat
+    docker run -it --rm -e JAVA_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n' -p 80:8080 -p 443:8443 -p 8000:8000 -v /c/Users/myapp:/webapp jaschen/tomcat6-jre7-ssl-admin
